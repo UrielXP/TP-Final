@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbumes - Metal Fentababys Wiki</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000;
+    }
+    header {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding: 30px 0;
+      background-color: #e0e0e0;
+      border-bottom: 3px solid #333;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .info-general {
+      width: 70%;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    /* --- SECCIÓN CENTRAL --- */
+    .zona-central {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .foto-banda {
+      flex: 1;
+      min-width: 250px;
+      background-color: #d9d9d9;
+      height: 300px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      color: #555;
+      background-size: cover;
+      background-position: center;
+    }
+    /* --- LISTA DE ÁLBUMES --- */
+    .catalogo {
+      flex: 2;
+      min-width: 300px;
+      background-color: #f2f2f2;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .catalogo h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lista-albumes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .album {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .album:hover {
+      transform: scale(1.03);
+    }
+    .album img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .album-info {
+      padding: 10px 15px;
+    }
+    .album-info h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #111;
+    }
+    .album-info p {
+      margin: 5px 0 10px;
+      color: #444;
+      font-size: 0.9rem;
+    }
+    .album-info a {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .album-info a:hover {
+      background-color: #555;
+    }
+    /* --- BOTÓN VOLVER --- */
+    .volver {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .volver a {
+      text-decoration: none;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .volver a:hover {
+      background-color: #555;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+    footer .contenido-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .info-creadores {
+      width: 60%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Álbumes de (banda)
+  </header>
+  <main>
+    <section class="info-general">
+      <h2>Discografía</h2>
+      <p>Estos son algunos de los álbumes más representativos de esta banda, con enlace directo a YouTube para escuchar el disco completo.</p>
+    </section>
+    <section class="zona-central">
+      <!-- FOTO DE LA BANDA -->
+      <div class="foto-banda" style="background-image: url('banda en cuestion.jpg');"></div>
+      <!-- LISTA DE ÁLBUMES -->
+      <div class="catalogo">
+        <h2>Álbumes Destacados</h2>
+        <div class="lista-albumes">
+          <div class="album">
+            <img src="disco 1" alt="nombre de disco">
+            <div class="album-info">
+              <h3>nombre de disco (fecha)</h3>
+              <p>Un clásico del thrash metal con temas como “Battery” y “Welcome Home (Sanitarium)”.</p>
+              <a href="https://youtu.be/dQw4w9WgXcQ?si=zprqmTsftS_CPjHz" target="_blank">Escuchar en YouTube</a>
+            </div>
+          </div>
+          <div class="album">
+            <img src="disco 2" alt="nombre de disco">
+            <div class="album-info">
+              <h3>nombre de disco (fecha)</h3>
+              <p>informacion breve.</p>
+              <a href="https://youtu.be/dQw4w9WgXcQ?si=zprqmTsftS_CPjHz" target="_blank">Escuchar en YouTube</a>
+            </div>
+          </div>
+          <div class="album">
+            <img src="disco 3" alt="nombre de disco">
+            <div class="album-info">
+              <h3>informacion de disco (fecha)</h3>
+              <p>informacion breve.</p>
+              <a href="https://youtu.be/dQw4w9WgXcQ?si=zprqmTsftS_CPjHz" target="_blank">Escuchar en YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="volver">
+      <a href="Pagina de inicio.html">Volver al Catálogo</a>
+    </div>
+  </main>
+  <footer>
+    <div class="contenido-footer">
+      <div class="info-creadores">
+        <p><strong>Creadores:</strong> Uziel Bargas, Uriel Fonzalida y Santino Corchio.</p>
+        <p>© 2025 Fentababys | <a href="#" style="color:lightblue;">Contacto</a> | <a href="#" style="color:lightblue;">Privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

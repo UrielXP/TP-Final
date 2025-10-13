@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki de Bandas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000;
+    }
+    header {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 30px 0;
+      background-color: #e0e0e0;
+      border-bottom: 3px solid #333;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .info-general {
+      width: 60%;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    /* --- SECCIÓN CENTRAL (CATÁLOGO + FOTOS) --- */
+    .zona-central {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin-bottom: 60px;
+    }
+    .foto-banda {
+      width: 25%;
+      background-color: #d9d9d9;
+      height: 300px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      color: #555;
+    }
+    .catalogo {
+      width: 40%;
+      background-color: #f2f2f2;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      max-height: 400px;
+    }
+    .catalogo h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .genero {
+      margin-bottom: 20px;
+    }
+    .genero h3 {
+      background-color: #ccc;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+    .genero ul {
+      list-style-type: none;
+      padding-left: 15px;
+      margin: 0;
+    }
+    .genero li {
+      margin-bottom: 5px;
+    }
+    .genero a {
+      text-decoration: none;
+      color: #333;
+    }
+    .genero a:hover {
+      text-decoration: underline;
+      color: #000;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 20px;
+    }
+    footer .contenido-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .info-creadores {
+      width: 60%;
+    }
+
+    .formulario-contacto {
+      width: 35%;
+      background-color: #111;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .formulario-contacto input,
+    .formulario-contacto textarea,
+    .formulario-contacto button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+    }
+    .formulario-contacto button {
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+    }
+    .formulario-contacto button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Título del Sitio
+  </header>
+  <main>
+    <section class="info-general">
+      <h2>Información General</h2>
+      <p>Bienvenido a la wiki de bandas. Aquí podrás conocer información sobre tus grupos favoritos, sus álbumes, fundadores y mucho más.</p>
+    </section>
+
+    <section class="zona-central">
+      <div class="foto-banda">Foto izquierda</div>
+
+      <div class="catalogo">
+  <h2>Catálogo de Bandas</h2>
+
+  <div class="genero">
+    <h3>Nu-metal</h3>
+    <ul>
+      <li><a href="limp_bizkit.html">Limp Bizkit</a></li>
+      <li><a href="korn.html">Korn</a></li>
+      <li><a href="slipknot.html">Slipknot</a></li>
+      <li><a href="linkin_park.html">Linkin Park</a></li>
+      <li><a href="papa_roach.html">Papa Roach</a></li>
+    </ul>
+  </div>
+
+  <div class="genero">
+    <h3>Hard rock</h3>
+    <ul>
+      <li><a href="acdc.html">AC/DC</a></li>
+      <li><a href="guns_n_roses.html">Guns N’ Roses</a></li>
+      <li><a href="aerosmith.html">Aerosmith</a></li>
+      <li><a href="led_zeppelin.html">Led Zeppelin</a></li>
+      <li><a href="deep_purple.html">Deep Purple</a></li>
+    </ul>
+  </div>
+
+  <div class="genero">
+    <h3>Heavy metal</h3>
+    <ul>
+      <li><a href="iron_maiden.html">Iron Maiden</a></li>
+      <li><a href="judas_priest.html">Judas Priest</a></li>
+      <li><a href="black_sabbath.html">Black Sabbath</a></li>
+      <li><a href="dio.html">Dio</a></li>
+      <li><a href="accept.html">Accept</a></li>
+    </ul>
+  </div>
+
+  <div class="genero">
+    <h3>Rock alternativo</h3>
+    <ul>
+      <li><a href="radiohead.html">Radiohead</a></li>
+      <li><a href="foo_fighters.html">Foo Fighters</a></li>
+      <li><a href="arctic_monkeys.html">Arctic Monkeys</a></li>
+      <li><a href="muse.html">Muse</a></li>
+      <li><a href="smashing_pumpkins.html">The Smashing Pumpkins</a></li>
+    </ul>
+  </div>
+
+  <div class="genero">
+    <h3>Thrash metal</h3>
+    <ul>
+      <li><a href="pantera.html">Pantera</a></li>
+      <li><a href="metallica.html">Metallica</a></li>
+      <li><a href="megadeth.html">Megadeth</a></li>
+      <li><a href="slayer.html">Slayer</a></li>
+      <li><a href="exodus.html">Exodus</a></li>
+    </ul>
+  </div>
+</div>
+
+      <div class="foto-banda">Foto derecha</div>
+    </section>
+  </main>
+  <footer>
+    <div class="contenido-footer">
+      <div class="info-creadores">
+        <p><strong>Creadores:</strong> Uziel Bargas, Uriel Fonzalida y Santino Corchio.</p>
+        <p>© 2025 Fentababys | Enlaces de interés: <a href="#" style="color:lightblue;">Contacto</a> | <a href="#" style="color:lightblue;">Privacidad</a></p>
+      </div>
+      <div class="formulario-contacto">
+        <h3>Reportar error / Contacto</h3>
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Tu correo">
+        <textarea rows="3" placeholder="Describe el error o consulta"></textarea>
+        <button>Enviar</button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
