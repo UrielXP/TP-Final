@@ -1,0 +1,140 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000;
+    }
+    header {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding: 30px 0;
+      background-color: #e0e0e0;
+      border-bottom: 3px solid #333;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .info-general {
+      width: 70%;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    /* --- SECCIÓN CENTRAL --- */
+    .zona-central {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .foto-banda {
+      flex: 1;
+      min-width: 250px;
+      background-color: #d9d9d9;
+      height: 300px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      color: #555;
+      background-size: cover;
+      background-position: center;
+    }
+    /* --- LISTA DE ÁLBUMES --- */
+    .catalogo {
+      flex: 2;
+      min-width: 300px;
+      background-color: #f2f2f2;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .catalogo h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lista-albumes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .album {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .album:hover {
+      transform: scale(1.03);
+    }
+    .album img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .album-info {
+      padding: 10px 15px;
+    }
+    .album-info h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #111;
+    }
+    .album-info p {
+      margin: 5px 0 10px;
+      color: #444;
+      font-size: 0.9rem;
+    }
+    .album-info a {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .album-info a:hover {
+      background-color: #555;
+    }
+    /* --- BOTÓN VOLVER --- */
+    .volver {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .volver a {
+      text-decoration: none;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .volver a:hover {
+      background-color: #555;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+    footer .contenido-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .info-creadores {
+      width: 60%;
+    }
