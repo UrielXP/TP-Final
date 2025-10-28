@@ -64,9 +64,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
+        animation-name: mover;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
     }
     .foto-banda img {
       width: 100%;
       border-radius: 10px;
       border: 3px solid #ff0000;
+    
     }
+       @keyframes mover {
+  from {
+    transform: translatex(10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
