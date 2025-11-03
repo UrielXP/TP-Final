@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Freddy!</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+      height: 100vh;
+    }
+    #jumpscare {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      z-index: 9999;
+      background-color: black;
+    }
+    #jumpscare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.2s;
+    }
+    .flash {
+      animation: flashAnim 0.1s linear 5;
+    }
+    @keyframes flashAnim {
+      0%, 100% { background-color: black; }
+      50% { background-color: white; }
+    }
+  </style>
+</head>
+<body>
+  <div id="jumpscare">
+    <img src="freddy.gif" alt="Freddy Screamer">
+  </div>
+  <audio id="freddySound" src="Musica/freddy-jumpscare.mp3"></audio>
+  <script>
+    window.onload = () => {
+      const jumpscare = document.getElementById('jumpscare');
+      const sound = document.getElementById('freddySound');
+      document.body.classList.add('flash');
+      setTimeout(() => {
+        document.body.classList.remove('flash');
+        sound.currentTime = 0;
+        sound.play().catch(() => { console.log("Click en la página si no suena"); });
+        jumpscare.style.display = 'block';
+        jumpscare.querySelector('img').style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          jumpscare.style.display = 'none';
+        }, 6000);
+
+      }, 600); 
+    };
+  </script>
+
+</body>
+</html>

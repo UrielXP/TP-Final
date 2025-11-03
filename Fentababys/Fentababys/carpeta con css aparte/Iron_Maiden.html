@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Maiden</title>
+   <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+        <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/Iron Maiden - The Trooper (Official Video).mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Iron Maiden</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="fundadores_banda.html">Fundadores</a>
+      <a href="Disc. Iron Maiden.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+         Iron Maiden es una banda británica de heavy metal formada en Londres en 1975 por el bajista Steve Harris. Con un sonido potente, letras épicas y una imagen marcada por su icónico personaje Eddie, se convirtieron en una de las bandas más influyentes del metal.
+Su álbum The Number of the Beast (1982) marcó un antes y un después, impulsando su éxito mundial. A lo largo de las décadas, Iron Maiden mantuvo su estilo inconfundible, giras masivas y millones de seguidores en todo el mundo.
+        </p>
+        <h2>Información detallada</h2>
+        <ul>
+      <li><strong>Origen:</strong> Londres, Inglaterra</li>
+      <li><strong>Año de formación:</strong> 1975</li>
+      <li><strong>Género:</strong> Heavy Metal / NWOBHM (New Wave of British Heavy Metal)</li>
+      <li><strong>Fundador:</strong> Steve Harris</li>
+      <li><strong>Vocalistas principales:</strong> Paul Di’Anno (1978–1981), Bruce Dickinson (1981–1993, 1999–presente)</li>
+      <li><strong>Integrantes destacados:</strong> Steve Harris, Bruce Dickinson, Dave Murray, Adrian Smith, Nicko McBrain, Janick Gers</li>
+      <li><strong>Álbumes icónicos:</strong> The Number of the Beast (1982), Powerslave (1984), Seventh Son of a Seventh Son (1988), Brave New World (2000)</li>
+      <li><strong>Logros:</strong> Más de 100 millones de discos vendidos; pioneros del heavy metal moderno; giras globales históricas</li>
+    </ul>
+      </div>
+      <div class="foto-banda">
+        <img src="Iron Maiden.jpg" alt="Foto de banda">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

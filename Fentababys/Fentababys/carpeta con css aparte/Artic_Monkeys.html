@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arctic Monkeys</title>
+   <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+  <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/Arctic Monkeys - Do I Wanna Know_ (Official Video).mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Arctic Monkeys</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F.Artic_Monkeys.html">Fundadores</a>
+      <a href="Disc. Artic Monkeys.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+         Arctic Monkeys es una banda británica de indie rock, formada en Sheffield, Reino Unido.​ El grupo está compuesto por el guitarrista principal y vocalista Alex Turner, el guitarrista Jamie Cook, el baterista Matt Helders y el bajista Nick O'Malley. El bajista original de la banda, Andy Nicholson, dejó el proyecto en 2006 poco después del lanzamiento del álbum debut de la banda.
+        </p>
+        <h2>Información detallada</h2>
+        <p>
+         Los Arctic Monkeys fueron considerados como una de las primeras bandas en hacerse conocidas al público gracias a la difusión de sus canciones por Internet, por lo cual se los catalogó como «la banda que pudo haber cambiado el mercado de la música».​ Esto le valió para que su primer álbum de estudio, Whatever People Say I Am, That's What I'm Not (2006), se convierta en el disco debut británico más vendido en la historia, con más de 300 mil copias vendidas en su primera semana en el mercado.[5]​ Ganó el premio al Mejor Álbum Británico en los Brit Awards 2007. El segundo álbum de la banda, Favourite Worst Nightmare (2007), contó casi con el mismo éxito, ganando también el premio al Mejor Álbum Británico en los Brit Awards 2008. Sus siguientes trabajos serían Humbug (2009), un proyecto más experimental, y Suck It and See (2011).
+        </p>
+      </div>
+      <div class="foto-banda">
+        <img src="arcicmonkeys.webp" alt="Arctic Monkeys">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

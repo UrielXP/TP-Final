@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smashing Pumpkins</title>
+  <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+  <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/The Smashing Pumpkins - 1979 (Official Music Video).mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Smashing Pumpkins</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F.Smashing_Punkins.html">Fundadores</a>
+      <a href="Disc. Smashing Pumpinks.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+        The Smashing Pumpkins es una banda estadounidense de rock alternativo formada en Chicago en 1988. Fundada en un inicio por el vocalista Billy Corgan (voz, guitarra) y James Iha (guitarra), poco después incluyeron a Jimmy Chamberlin (batería) y D'arcy Wretzky (bajo), completando su formación original. La banda ha sufrido muchos cambios en su formación a lo largo de su existencia, con Corgan y el guitarrista James Iha siendo los únicos miembros oficiales a partir de 2014.
+        </p>
+        <h2>Información detallada</h2>
+        <p>
+       Repudiando las raíces musicales de punk rock de muchos contemporáneos del rock alternativo,​ los Pumpkins tienen un sonido diverso, densamente escalonado y pesado. A pesar de ser una banda fundada en Chicago, los Smashing Pumpkins se alinearon enseguida con la escena musical de Seattle gracias a su contacto con bandas como Soundgarden, junto a la que tocaron en varias ocasiones en 1991, o con la discográfica independiente Sub Pop. Sus primeros trabajos añadían elementos propios del shoegaze, heavy metal, dream pop, rock psicodélico, rock progresivo, hard rock y de la coetánea escena grunge de Seattle. Finalizando la década de 1990, se suman fuertes influencias del rock industrial, rock gótico y la electrónica en sus grabaciones. Corgan es el compositor principal del grupo — sus grandes ambiciones musicales y sus letras catárticas le han dado forma a la banda y a sus canciones, que han sido descritas como «informes angustiados, magullados de un mundo de pesadillas de Billy Corgan».
+        </p>
+      </div>
+      <div class="foto-banda">
+        <img src="smashingpumpkins.webp" alt="Smashing Pumpkins">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Purple  </title>
+  <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+   <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/Deep Purple - Child In Time - Live (1970).mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Deep Purple</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F.Deep_Purple.html">Fundadores</a>
+      <a href="Disc. Deep Purple.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+         Deep Purple es una banda británica de hard rock / heavy metal formada en Hertford, Inglaterra, en 1968. Son considerados uno de los grupos pioneros del hard rock y heavy metal, junto a Led Zeppelin y Black Sabbath. Su estilo combina guitarras potentes, teclados prominentes y solos virtuosos.
+Alcanzaron la fama con el álbum Deep Purple in Rock (1970) y consolidaron su estatus con Machine Head (1972), que incluye clásicos como “Smoke on the Water”. La banda ha pasado por varios cambios de formación, pero siempre ha mantenido un sonido poderoso y distintivo, influenciando a generaciones de músicos.
+        </p>
+        <h2>Información detallada</h2>
+        <ul>
+          <li><strong>Origen:</strong> Hertford, Inglaterra, Reino Unido</li>
+          <li><strong>Año de formación:</strong> 1968</li>
+          <li><strong>Género:</strong> Hard Rock / Heavy Metal / Progressive Rock</li>
+          <li><strong>Fundadores / Integrantes originales:</strong> Ritchie Blackmore (guitarra), Jon Lord (teclados), Ian Paice (batería), Rod Evans (voz), Nick Simper (bajo)</li>
+          <li><strong>Vocalistas destacados:</strong> Ian Gillan, David Coverdale</li>
+          <li><strong></strong>Álbumes icónicos:</strong> Deep Purple in Rock (1970), Fireball (1971), Machine Head (1972), Burn (1974)</li>
+          <li><strong>Logros:</strong> Más de 100 millones de discos vendidos, reconocidos como uno de los grupos más influyentes del hard rock, varios premios y homenajes a lo largo de su carrera</li>
+          <li><strong>Estilo musical:</strong> Guitarras y teclados potentes, riffs memorables, solos virtuosos, mezcla de hard rock con elementos de blues y rock progresivo</li>
+      </ul>
+      </div>
+      <div class="foto-banda">
+        <img src="Deep Purple 2.jpg" alt="Foto de banda">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

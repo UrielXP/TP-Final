@@ -1,0 +1,141 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background-image: url("https://pin.it/7ycMlTbWW"); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+    
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 90vh;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    nav {
+      width: 20%;
+      padding: 20px;
+      border-right: 2px solid #fff;
+   
+    }
+    nav h3 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 1.3em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    nav a {
+      display: block;
+      color: #ffffffbd;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: rgb(167, 2, 2);
+    }
+    main {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+    .texto {
+      flex: 2;
+
+    }
+    .texto h2 {
+      border-bottom: 2px solid #ff0000a4;
+      padding-bottom: 5px;
+    }
+    .foto-banda {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .foto-banda img {
+      width: 100%;
+      border-radius: 10px;
+      border: 3px solid #ff0000;
+      animation-name: mover;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+  animation-direction:alternate;
+    }
+    @keyframes mover {
+  from {
+    transform: translatex(10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}  
+.player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  height: 130px;
+  background-color: #e9120bc0;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  color: white;
+  overflow: auto;   
+  resize: both;     
+  z-index: 1000;
+  padding: 15px;
+}
+.player {
+  min-width: 200px;
+  min-height: 100px;
+  max-width: 400px;
+  max-height: 250px;
+}
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #666;
+  transform: scale(1.1);
+}
+#songName {
+  font-size: 15px;
+  margin: 10px 0;
+}
+#progreso {
+  width: 80%;
+  height: 8px;
+  background: #555;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#progreso-barra {
+  height: 100%;
+  width: 0%;
+  background: lime;
+  transition: width 0.1s linear;
+}

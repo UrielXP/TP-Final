@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guns 'N Roses</title>
+  <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+  <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/Guns N' Roses - November Rain.mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Guns N roses</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F._Gund_N_Roses.html">Fundadores</a>
+      <a href="Disc. Guns N Roses.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+         Guns N’ Roses es una banda de hard rock formada en Los Ángeles, EE. UU., en 1985 por Axl Rose, Slash, Izzy Stradlin, Duff McKagan y Steven Adler. Su debut, Appetite for Destruction (1987), explotó internacionalmente con himnos como “Sweet Child O’ Mine”, “Welcome to the Jungle” y “Paradise City”. En 1991 lanzaron Use Your Illusion I & II, ampliando su sonido. Tras décadas de cambios en la formación, Axl Rose permaneció al frente; en 2016 se produjo la reunión parcial con Slash y Duff, revitalizando a la banda y sus giras.
+        </p>
+        <h2>Información detallada</h2>
+        <ul>
+          <li><strong>Origen:</strong> Sídney, Australia</li>
+          <li><strong>Año de formación:</strong> 1973</li>
+          <li><strong>Género:</strong> Hard Rock / Rock and Roll</li>
+          <li><strong>Fundadores:</strong> Angus Young y Malcolm Young</li>
+        
+
+<li><strong>Vocalistas principales:</strong> Bon Scott (1974–1980), Brian Johnson (1980–presente)</li>
+
+<li><strong>Integrantes destacados:</strong> Angus Young, Malcolm Young, Brian Johnson, Cliff Williams, Phil Rudd</li>
+
+<li><strong>Álbumes icónicos:</strong> High Voltage (1976), Highway to Hell (1979), Back in Black (1980), The Razors Edge (1990)</li>
+
+<li><strong></strong>Logros:</strong> Más de 200 millones de discos vendidos en todo el mundo</li>
+
+<li><strong>Estilo musical:</strong> Guitarras potentes, ritmo constante y letras directas que reflejan la esencia del rock clásico</li>
+      </ul></div>
+      <div class="foto-banda">
+        <img src="Guns N’ Roses.jpg" alt="Foto de banda">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

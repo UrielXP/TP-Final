@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Sabbath</title>
+  <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+  <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/BLACK SABBATH - Paranoid (Official Video).mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progress-bar");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Black Sabbath</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F.Black_Sabbath.html">Fundadores</a>
+      <a href="Disc. Black Sabbath.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+         Black Sabbath es una banda británica de heavy metal formada en Birmingham en 1968 por Ozzy Osbourne, Tony Iommi, Geezer Butler y Bill Ward. Considerados los padres del heavy metal, su sonido oscuro y pesado cambió para siempre la historia del rock.
+Con su álbum debut Black Sabbath (1970) y el clásico Paranoid (1970), sentaron las bases del género con riffs sombríos y letras místicas. A lo largo de su carrera, experimentaron múltiples cambios de formación, pero su influencia en la música pesada sigue siendo inmensa.
+        </p>
+        <h2>Información detallada</h2>
+        <ul>
+          <li><strong>Origen:</strong> Birmingham, Inglaterra</li>
+
+<li><strong>Año de formación:</strong> 1968</li>
+
+<li><strong>Género:</strong> Heavy Metal / Hard Rock</li>
+
+<li><strong>Fundadores:</strong> Ozzy Osbourne, Tony Iommi, Geezer Butler, Bill Ward</li>
+
+<li><strong>Vocalistas principales:</strong> Ozzy Osbourne (1968–1979, 1997–2017), Ronnie James Dio (1979–1982, 1991–1992)</li>
+
+<li><strong>Integrantes destacados:</strong> Tony Iommi, Ozzy Osbourne, Geezer Butler, Bill Ward, Ronnie James Dio</li>
+
+<li><strong>Álbumes icónicos:</strong> Black Sabbath (1970), Paranoid (1970), Master of Reality (1971), Heaven and Hell (1980), 13 (2013)</li>
+
+<li><strong>Logros:</strong> Más de 70 millones de discos vendidos; reconocidos como los creadores del heavy metal moderno</li>
+
+<li><strong>Estilo musical:</strong> Riffs pesados, atmósferas oscuras y letras que abordan lo oculto, la sociedad y la introspección</li>
+        </ul>
+      </div>
+      <div class="foto-banda">
+        <img src="Black Sabbath 2.jpg" alt="Foto de banda">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

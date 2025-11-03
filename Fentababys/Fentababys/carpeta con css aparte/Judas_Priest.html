@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judas Priest</title>
+  <link rel="stylesheet" href="pag_info_gen.css"></link>
+</head>
+<body>
+    <div class="player" id="playerBox">
+    <h3>🎧 Mini Reproductor</h3>
+    <p id="songName">Canción actual: —</p>
+    <div id="progreso"><div id="progreso-barra"></div></div>
+    <button id="play">▶️</button>
+    <button id="pause">⏸️</button>
+  </div>
+  <audio id="player"></audio>
+<script>
+  const songs = [
+    "Musica/Judas Priest - Painkiller.mp3",
+  ];
+  let index = 0;
+  const player = document.getElementById("player");
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+  const songName = document.getElementById("songName");
+  const progressBar = document.getElementById("progreso-barra");
+  function loadSong() {
+    player.src = songs[index];
+    songName.textContent = "Canción actual: " + songs[index].split("/").pop();
+  }
+  playBtn.addEventListener("click", () => player.play());
+  pauseBtn.addEventListener("click", () => player.pause());
+  player.addEventListener("timeupdate", () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
+  });
+  player.addEventListener("ended", () => {
+    index = (index + 1) % songs.length;
+    loadSong();
+    player.play();
+  });
+
+  loadSong();
+</script>
+  <header>Judas Priest</header>
+  <div class="container">
+    <nav>
+      <h3>Info general</h3>
+      <a href="F.Judas_Priet.html">Fundadores</a>
+      <a href="Disc. Judas Priest.html">Álbumes</a>
+      <a href="Pagina_de_inicio.html">Volver al catálogo</a>
+    </nav>
+    <main>
+      <div class="texto">
+        <h2>Biografía</h2>
+        <p>
+        Judas Priest es una banda británica de heavy metal formada en Birmingham en 1969. Considerados pioneros del género, fueron clave en definir la imagen y el sonido del metal: guitarras gemelas, voces agudas y estética de cuero y cadenas.
+Con discos como British Steel (1980) y Painkiller (1990), llevaron el metal a nuevos niveles de potencia y técnica. Su vocalista Rob Halford, conocido como “The Metal God”, se convirtió en un ícono por su voz única y su presencia escénica.
+        </p>
+        <h2>Información detallada</h2>
+        <ul>
+          <li><strong>Año de formación:</strong> 1969</li>
+          <li><strong>Género:</strong> Heavy Metal</li>
+          <li><strong>Fundadores:</strong> K.K. Downing, Ian Hill, Al Atkins</li>
+          <li><strong>Vocalista principal:</strong> Rob Halford</li>
+          <li><strong>Integrantes destacados:</strong> Rob Halford, K.K. Downing, Glenn Tipton, Ian Hill, Scott Travis</li>
+          <li><strong>Álbumes icónicos:</strong> Sad Wings of Destiny (1976), British Steel (1980), Screaming for Vengeance (1982), Painkiller (1990), Firepower (2018)</li>
+          <li><strong>Logros:</strong> Más de 50 millones de discos vendidos; considerados una de las bandas más influyentes del heavy metal</li>
+          <li><strong>Estilo musical:</strong> Riffs potentes, voces agudas, velocidad y temática rebelde; base del sonido clásico del metal</li>
+</ul>
+      </div>
+      <div class="foto-banda">
+        <img src="Judas Priest.jpg" alt="Foto de banda">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #913030;
+  border-bottom: 3px solid #242424;
+}
+#modoBtn {
+  background-color: #242424;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#modoBtn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.modo-oscuro {
+  background-color: #111;
+  color: #f5f5f5;
+}
+
+.modo-oscuro header {
+  background-color: #222;
+  border-bottom: 3px solid #666;
+}
+
+.modo-oscuro .info-general,
+.modo-oscuro .catalogo,
+.modo-oscuro .formulario-contacto {
+  background-color: #222;
+  color: #eee;
+}
+
+.modo-oscuro footer {
+  background-color: #000;
+}
