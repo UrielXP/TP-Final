@@ -6,6 +6,7 @@
   <title>Metal Fentababys Wiki</title>
    <link rel="stylesheet" href="modo.css">
    <link rel="stylesheet" href="freddy.css">
+   <link rel="stylesheet" href="prueba.css">
   <style>
     body {
       margin: 0;
@@ -224,16 +225,24 @@
     <div class="contenido-footer">
       <div class="info-creadores">
         <p><strong>Creadores:</strong> Uziel Bargas, Uriel Fonzalida y Santino Corchio.</p>
-        <p>© 2025 Fentababys | Enlaces de interés: <a href="#" style="color:lightblue;">Contacto</a> | <a href="#" style="color:lightblue;">Privacidad</a></p>
+        <p>© 2025 Fentababys | Enlaces de interés: <a href="paginaNosotros.html" style="color:lightblue;">Contacto</a> | <a href="paginaNosotros.html" style="color:lightblue;">Privacidad</a></p>
       </div>
-      <div class="formulario-contacto">
+   >
+
+  <div class="formulario-contacto">
   <h3>Reportar error / Contacto</h3>
   <input type="text" id="nombre" placeholder="Tu nombre">
+  <p id="error-nombre" class="mensaje-error"></p>
   <input type="email" id="correo" placeholder="Tu correo">
+  <p id="error-correo" class="mensaje-error"></p>
   <textarea rows="3" id="mensaje" placeholder="Describe el error o consulta"></textarea>
+  <p id="error-mensaje" class="mensaje-error"></p>
   <button id="enviar">Enviar</button>
+  <p id="exito"></p>
 </div>
-    </div>
+
+</div>
+    
   </footer>
   <script src="prueba.js"></script>
 <script src="modo.js"></script>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros | Metal Fentababys</title>
+  <link rel="stylesheet" href="modo.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-image: url("fondoimagenNosotros.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+      border-bottom: 3px solid #a30000;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .presentacion {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 50px;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    .presentacion h2 {
+      color: #ff4444;
+      margin-bottom: 15px;
+    }
+
+    .integrantes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1000px;
+    }
+
+    .miembro {
+      width: 280px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .miembro:hover {
+      transform: scale(1.05);
+    }
+
+    .miembro h3 {
+      color: #ff4444;
+      margin-bottom: 8px;
+    }
+
+    .miembro p {
+      font-size: 0.95em;
+      line-height: 1.5em;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #a30000;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 25px;
+      color: #fff;
+      background-color: #a30000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .boton-volver:hover {
+      background-color: #d32f2f;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    METAL FENTABABYS
+  </header>
+
+  <main>
+    <section class="presentacion">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        Somos <strong>Metal Fentababys</strong>, un grupo apasionado por la música y la cultura del metal.  
+        Este proyecto busca compartir información sobre las bandas más representativas del género,  
+        su historia, álbumes, y el impacto que dejaron en el mundo musical.
+      </p>
+    </section>
+
+    <section class="integrantes">
+      <div class="miembro">
+        <h3>Uziel Bargas</h3>
+        <p><strong>Contribuciones principales:</strong> validación completa de la página y del formulario,  
+        implementación del mini reproductor, creación del modo oscuro,  
+        desarrollo de la página de Freddy con su botón interactivo,  
+        además de aportar información para algunas páginas y realizar corrección de errores generales.</p>
+      </div>
+
+      <div class="miembro">
+        <h3>Uriel Fonzalida</h3>
+        <p><strong>Contribuciones principales:</strong> creación de parte del CSS, animaciones con CSS,  
+        armado del repositorio en GitHub, redacción de información para las páginas  
+        y corrección de errores en general.</p>
+      </div>
+
+      <div class="miembro">
+        <h3>Santino Corchio</h3>
+        <p><strong>Contribuciones principales:</strong> creación de las bases del proyecto, bocetos iniciales,  
+        modelo de la página en HTML, desarrollo de las páginas, colaboración en el apartado visual con CSS  
+        y redacción de información para el sitio.</p>
+      </div>
+    </section>
+    <a href="Paginadeinicio.html" class="boton-volver">⬅ Dirigirse a la página principal</a>
+  </main>
+
+  <footer>
+    <p>© 2025 Fentababys | Proyecto escolar - Wiki de Metal</p>
+  </footer>
+</body>
+</html>

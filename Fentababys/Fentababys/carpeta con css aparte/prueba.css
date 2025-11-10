@@ -1,0 +1,11 @@
+.error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+#exito {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  display: none;
+}

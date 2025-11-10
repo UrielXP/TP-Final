@@ -2,25 +2,60 @@ document.addEventListener("DOMContentLoaded", function() {
   const btnEnviar = document.getElementById("enviar");
   btnEnviar.addEventListener("click", validarFormulario);
 });
-function validarFormulario() {
-  const nombre = document.getElementById("nombre").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const mensaje = document.getElementById("mensaje").value.trim();
-  if (nombre === "") {
-    alert("El campo 'Nombre' no puede estar vacío.");
-    document.getElementById("nombre").focus();
-    return;
+
+function validarFormulario(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre");
+  const correo = document.getElementById("correo");
+  const mensaje = document.getElementById("mensaje");
+
+  const errorNombre = document.getElementById("error-nombre");
+  const errorCorreo = document.getElementById("error-correo");
+  const errorMensaje = document.getElementById("error-mensaje");
+  const mensajeExito = document.getElementById("exito");
+
+  [nombre, correo, mensaje].forEach(campo => campo.classList.remove("error"));
+  [errorNombre, errorCorreo, errorMensaje].forEach(msg => msg.textContent = "");
+  mensajeExito.style.display = "none";
+
+  let valido = true;
+
+  const patronNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+  const patronCorreo = /^[^@\s]+@gmail\.com$/;
+
+  
+  if (nombre.value.trim() === "") {
+    nombre.classList.add("error");
+    errorNombre.textContent = "El campo 'Nombre' no puede estar vacío.";
+    valido = false;
+  } else if (!patronNombre.test(nombre.value.trim())) {
+    nombre.classList.add("error");
+    errorNombre.textContent = "El nombre solo puede contener letras y espacios.";
+    valido = false;
   }
-  const patronCorreo = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
-  if (!patronCorreo.test(correo)) {
-    alert("Ingresá un correo electrónico válido.");
-    document.getElementById("correo").focus();
-    return;
+
+  
+  if (correo.value.trim() === "") {
+    correo.classList.add("error");
+    errorCorreo.textContent = "El campo 'Correo' no puede estar vacío.";
+    valido = false;
+  } else if (!patronCorreo.test(correo.value.trim())) {
+    correo.classList.add("error");
+    errorCorreo.textContent = "El correo debe ser válido y terminar en @gmail.com.";
+    valido = false;
   }
-  if (mensaje === "") {
-    alert("El campo 'Mensaje' no puede estar vacío.");
-    document.getElementById("mensaje").focus();
-    return;
+
+  
+  if (mensaje.value.trim() === "") {
+    mensaje.classList.add("error");
+    errorMensaje.textContent = "El campo 'Mensaje' no puede estar vacío.";
+    valido = false;
   }
-  alert("¡Mensaje enviado correctamente!");
+
+
+  if (valido) {
+    mensajeExito.textContent = "¡Mensaje enviado correctamente!";
+    mensajeExito.style.display = "block";
+  }
 }
